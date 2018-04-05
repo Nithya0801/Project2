@@ -1,80 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="MyRouteConfig.js"></script>
-<title>Insert title here</title>
-</head>
-<body style="height:1500px"  ng-app="myApp">
-	<br>
-	<br>
-	<br>
-	
-	
-	
-<nav class="navbar navbar-inverse navbar-fixed-top">
 
-<div class="container">
-  <div class="jumbotron">
-  <img src="chat.jpg" height="150" width="150" align="right"/>
-    <h1><font color="Gray">Lets' Chat</font></h1>      
-    <p>Happy Chatting!!!!</p>
-  </div>
-    
-</div>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" class="active" href="/"><font color="red"> Lets' Chat</font></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="#home">Home</a></li>
-      <li><a href="#login">Login</a></li>
-      <li><a href="/register">Registration</a></li>
-      <li><a href="#">About Us</a></li>
-    </ul>
-  </div> 
-</nav>
-    
-    <br>
-     <br>
-      <br>
-       <br>
-        <br>
-         <br>
-          <br>
-           <br>
-            <br>
-             <br>
-         <br>
-          <br>
-           <br>
-            <br>
-      <div id="main">
-  
-    angular templating
-		this is where content will be injected
-    <div ng-view></div>
-    
-  </div>
-  
-    
-     <footer class="text-center">
-    <p>Copyright © 2008 Design Shack</p>
-  
-   
-  </footer>
-  
-
-
-</body>
-</html>
- -->
- 
  <!DOCTYPE html>
 
 
@@ -85,61 +9,14 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
- <!--  <script>
   
-	// create the module and name it scotchApp
-	var scotchApp = angular.module('scotchApp', ['ngRoute']);
-
-	// configure our routes
-	scotchApp.config(function($routeProvider) {
-		$routeProvider
-
-			// route for the home page
-			.when('/', {
-				templateUrl : 'template/home.html',
-				controller  : 'mainController'
-			})
-
-			.when('/login', {
-				templateUrl : 'template/login.html',
-				controller  : 'aboutController'
-			})
-			// route for the about page
-			.when('/about', {
-				templateUrl : 'pages/about.html',
-				controller  : 'aboutController'
-			})
-
-			// route for the contact page
-			.when('/contact', {
-				templateUrl : 'pages/contact.html',
-				controller  : 'contactController'
-			});
-	});
-
-	// create the controller and inject Angular's $scope
-	scotchApp.controller('mainController', function($scope) {
-		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
-	});
-
-	scotchApp.controller('aboutController', function($scope) {
-		$scope.message = 'Look! I am an about page.';
-	});
-
-	scotchApp.controller('contactController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
-	});
-
-   
-
-
-  </script> -->
+ 
   
   <script src="MyRouteConfig.js"></script>
+  <script src="./controller/blogcontroller.js"></script>
   <style>
  
       
@@ -180,6 +57,8 @@ define angular controller -->
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
           <li><a href="#login"><i class="fa fa-sign-in"></i> Login</a></li>
+           <li><a href="#blog"><i class="fa fa-dashcube"></i> Blog</a></li>
+            <li><a href="#register"><i class="fa fa-registered"></i> Register</a></li>
         <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
         <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
       </ul>

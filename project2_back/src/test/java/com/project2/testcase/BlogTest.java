@@ -84,7 +84,7 @@ public class BlogTest {
 @Test
 	public void listBlogTest()
 	{
-		List<Blog> b=blogDao.listBlog("nithya@gmail.com");
+		List<Blog> b=blogDao.listBlog("nithya");
 		for(Blog bb:b)
 		{
 			System.out.println(bb.getBlogId());
@@ -92,8 +92,8 @@ public class BlogTest {
 			System.out.println(bb.getBlogContent());
 			System.out.println(bb.getCreatedDate());
 			System.out.println(bb.getStatus());
-			User u=bb.getEmail();
-			System.out.println(u.getEmail());
+			
+			System.out.println(bb.getUsername());
 		}
 		boolean b1=true;
 		assertEquals("Listed",true,b1);

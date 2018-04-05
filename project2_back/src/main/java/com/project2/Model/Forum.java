@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table
 public class Forum {
@@ -20,11 +22,11 @@ public class Forum {
 private int forumId;
 private String forumName;
 private String forumContent;
+@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 private Date createdDate;
 
-@ManyToOne(fetch=FetchType.EAGER)
-@JoinColumn(name="email")
-private User email;
+private String userName;
+
 private String status;
 
 
@@ -53,11 +55,12 @@ public void setCreatedDate(Date createdDate) {
 	this.createdDate = createdDate;
 }
 
-public User getEmail() {
-	return email;
+
+public String getUserName() {
+	return userName;
 }
-public void setEmail(User email) {
-	this.email = email;
+public void setUserName(String userName) {
+	this.userName = userName;
 }
 public String getStatus() {
 	return status;

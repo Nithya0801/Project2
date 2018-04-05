@@ -27,6 +27,11 @@ scotchApp.config(function($routeProvider) {
 			templateUrl : 'template/login.html',
 			controller  : 'aboutController'
 		})
+		
+		.when('/blog', {
+			templateUrl : 'template/blog.html',
+			controller  : 'blogcontroller'
+		})
 		// route for the about page
 		.when('/about', {
 			templateUrl : 'pages/about.html',
@@ -45,6 +50,7 @@ scotchApp.controller('mainController', function($scope) {
 	// create a message to display in our view
 	$scope.message = 'Everyone come and see how good I look!';
 });
+
 
 scotchApp.controller('aboutController', function($scope) {
 	$scope.message = 'Look! I am an about page.';

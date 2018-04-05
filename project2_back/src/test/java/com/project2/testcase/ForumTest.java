@@ -69,10 +69,10 @@ public class ForumTest {
 	@Test
 	public void listForumTest()
 	{
-		List<Forum> l=forumDao.listForum("nithya@gmail.com");
+		List<Forum> l=forumDao.listForum("nithya");
 		System.out.println("ID\tName\tContent\tDate\tstatus\tUsername");
 		for(Forum f:l)
-			System.out.println(f.getForumId()+"\t"+f.getForumName()+"\t"+f.getForumContent()+"\t"+f.getCreatedDate()+"\t"+f.getStatus()+"\t"+f.getEmail().getEmail());
+			System.out.println(f.getForumId()+"\t"+f.getForumName()+"\t"+f.getForumContent()+"\t"+f.getCreatedDate()+"\t"+f.getStatus()+"\t"+f.getUserName());
 		boolean b=true;
 		assertEquals("Listed!!!!",true,b);
 	}

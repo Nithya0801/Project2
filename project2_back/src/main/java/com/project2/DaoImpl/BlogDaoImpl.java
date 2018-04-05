@@ -116,7 +116,7 @@ public class BlogDaoImpl implements BlogDao{
 	public List<Blog> listBlog(String userName) {
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		List<Blog> list=session.createQuery("from blog where email='"+userName+"'").list();
+		List<Blog> list=session.createQuery("from blog where username='"+userName+"'").list();
 		session.getTransaction().commit();
 		return list;
 		}
@@ -128,5 +128,11 @@ public class BlogDaoImpl implements BlogDao{
 		session.getTransaction().commit();
 		return list;
 		}
+
+
+	public boolean incrementLike(Blog blog) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

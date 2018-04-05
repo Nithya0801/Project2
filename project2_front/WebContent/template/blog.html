@@ -1,0 +1,57 @@
+
+
+<br>
+<br>
+
+       <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="300">
+<tr>
+    <td>
+        <form method="post" ng-controller="blogcontroller">
+            <table width="100%" cellpadding="7" cellspacing="0" border="0">
+            <h3>
+                <tr>
+                    <td colspan="3"><center><strong>Blog</strong></center><br /></td><br />
+                </tr>
+                <tr>
+                <td width="30%">Blog Name</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="text" name="bname" size="50" ng-model="blog.blogName"/></td>
+                </tr>
+                <tr>
+                <td width="30%">Blog Content</td>
+                <td width="10%">:</td>
+                <td width="80%"><textarea name="bcontent" rows="5" cols="53" ng-model="blog.blogContent"></textarea></td>
+                </tr>
+                 <tr>
+                <td colspan="3"><center><input type="submit" value="Insert Blog" ng-click="insertBlog()"/></center><br /></td>
+                </tr>
+                </h3>
+            </table>
+     
+        
+       <!--  <table ng-repeat="blog in blogdata">
+        
+        <tr><td>BlogName</td><td>{{blog.blogName}}</td></tr>
+        
+        </table> -->
+ 
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="span8" ng-repeat="blog in blogdata">
+    <h1>{{blog.blogName}}</h1>
+    <p>{{blog.blogContent}}</p>
+    <div>
+        <span class="badge badge-success">Posted {{blog.createdDate}}</span><div class="pull-right"><button ng-click="editBlog(blog.blogId)"> <span class="label"><i class="fa fa-edit" style="font-size:28px"></i></span></button><button ng-click="deleteBlog(blog.blogId)"> <span class="label"><i class="fa fa-trash-o" style="font-size:28px"></i></span></button><button ng-click=""> <span class="label"><i class="fa fa-thumbs-o-up" style="font-size:28px"></i></span></button></div>
+    </div> 
+    <hr>
+   
+</div>
+        
+           </form>
+    </td>
+</tr>
+</table>

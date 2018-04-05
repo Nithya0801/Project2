@@ -4,12 +4,13 @@ package com.project2.Model;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity(name="blog")
@@ -20,10 +21,10 @@ public class Blog {
 	private int blogId;
 	private String blogName;
 	private String blogContent;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date createdDate;
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="email")
-	private User email;
+	
+	private String username;
 	private String status;
 	
 	public String getStatus() {
@@ -56,12 +57,12 @@ public class Blog {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-	public User getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
-	public void setEmail(User email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-
+	
 	
 }

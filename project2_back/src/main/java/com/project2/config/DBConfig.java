@@ -14,8 +14,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.project2.Dao.BlogDao;
-import com.project2.DaoImpl.BlogDaoImpl;
+
 import com.project2.Model.Blog;
 import com.project2.Model.Forum;
 import com.project2.Model.JobModel;
@@ -26,7 +25,8 @@ import com.project2.Model.User;
 @EnableTransactionManagement
 public class DBConfig {
 
-	
+	@Autowired
+	@Bean(name="dataSource")
 	public DataSource getDataSource()
 	{
 		   DriverManagerDataSource datasource = new DriverManagerDataSource();
@@ -56,11 +56,6 @@ public class DBConfig {
 	        return sessionFactory;
 	}
 	
-	@Bean(name="blogDao")
-	public BlogDao getBlogDao()
-	{
-		return new BlogDaoImpl();
-	}
 	
 	
 	@Bean
