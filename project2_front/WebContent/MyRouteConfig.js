@@ -28,8 +28,14 @@ scotchApp.config(function($routeProvider) {
 			controller  : 'aboutController'
 		})
 		
+		
 		.when('/blog', {
 			templateUrl : 'template/blog.html',
+			controller  : 'blogcontroller'
+		})
+		
+		.when('/updateBlog', {
+			templateUrl : 'template/updateBlog.html',
 			controller  : 'blogcontroller'
 		})
 		// route for the about page

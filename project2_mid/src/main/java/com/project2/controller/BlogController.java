@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,4 +59,34 @@ public class BlogController {
 		
 	}
 	
+	@GetMapping(value="/getBlog/{id}")
+	public ResponseEntity<Blog> getBlog(@PathVariable("id") int blogId)
+	{
+		Blog blog=blogDao.getBlog(blogId);
+		if(blog==null)
+			return new ResponseEntity<Blog>(blog,HttpStatus.NOT_FOUND);
+		else
+			return new ResponseEntity<Blog>(blog,HttpStatus.OK);
+	}
+	
+	@PutMapping(value="/updateBlog/{id}")
+	public ResponseEntity<String> updateBlog(@PathVariable("id") int blogId,@RequestBody Blog blog)
+	{
+		Blog mblog=blogDao.getBlog(blogId);
+		if(mblog==null)
+		{
+			return new ResponseEntity<String>("No such Blog!!!",HttpStatus.NOT_FOUND);
+		}
+		else
+		{
+			mblog.setBlogName(blog.getBlogName());
+			mblog.setBlogContent(blog.getBlogContent());
+			boolean b=blogDao.updateBlog(mblog);
+			if(b)
+				return new ResponseEntity<String>("Updated Successfully!!!",HttpStatus.OK);
+			else
+				return new ResponseEntity<String>("Update Failure!!!!",HttpStatus.NOT_FOUND);
+			
+		}
+	}
 }

@@ -1,0 +1,36 @@
+<br>
+<br>
+
+       <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="300">
+<tr>
+    <td>
+        <form method="post" ng-controller="blogcontroller">
+            <table width="100%" cellpadding="7" cellspacing="0" border="0">
+            <h3>
+                <tr>
+                    <td colspan="3"><center><strong>Blog</strong></center><br /></td><br />
+                </tr>
+                <tr>
+                <td width="30%">Blog Name</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="text" name="bname" size="50" ng-model="blog.blogName" />{{blog.blogName}}</td>
+                </tr>
+                <tr>
+                <td width="30%">Blog Content</td>
+                <td width="10%">:</td>
+                <td width="80%"><textarea name="bcontent" rows="5" cols="53" ng-model="blog.blogContent" >{{blog.blogContent}}</textarea></td>
+                </tr>
+                 <tr>
+                <td colspan="3"><center><input type="submit" value="Update Blog" ng-click="updateBlog()"/></center><br /></td>
+                </tr>
+                </h3>
+            </table>
+     
+</form>
+</td>
+</tr>
+</table>

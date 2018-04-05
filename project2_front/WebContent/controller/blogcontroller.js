@@ -12,6 +12,7 @@ scotchApp.controller("blogcontroller",function($scope,$http,$location){
 		console.log("insertBlog invoked!!!!");
 		$http.post('http://localhost:8080/project2_mid/addBlog',$scope.blog).then(function(response) {
 			console.log('status :',response.statusText);
+	
 		});
 		
 	};
@@ -29,10 +30,29 @@ scotchApp.controller("blogcontroller",function($scope,$http,$location){
 		console.log("Deleting!!!!");
 		$http.post('http://localhost:8080/project2_mid/delBlog/'+id).then(function(response){
 			$scope.delData=response.data;
-			$location.path("/blog")
+			$location.path("/blog");
+		
 		});
 	};
 	
+	$scope.editBlog=function(id)
+	{
+		console.log("Editing!!!!");
+		$http.get('http://localhost:8080/project2_mid/getBlog/'+id)
+		.then(function(response){
+			console.log("invoked!!");
+			$scope.blog=response.data;
+			$location.path("/updateBlog");
+		});
+	};
 	
+	$scope.updateBlog=function()
+	{
+		console.log("Update!!!");
+		$http.put('http://localhost:8080/project2_mid/updateBlog/'+id,$scope.blog)
+		.then(function(response) {
+			$location.path("/blog");
+		});
+	};
 	
 });
