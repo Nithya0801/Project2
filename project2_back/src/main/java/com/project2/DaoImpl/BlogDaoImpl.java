@@ -131,8 +131,18 @@ public class BlogDaoImpl implements BlogDao{
 
 
 	public boolean incrementLike(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
+		try
+		{
+			int like=blog.getLikes();
+			like++;
+			blog.setLikes(like);
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 	}
 
 }

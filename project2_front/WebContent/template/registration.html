@@ -1,0 +1,49 @@
+<br>
+<br>
+
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="300">
+<tr>
+    <td>
+        <form method="post" ng-controller="registercontroller">
+            <table width="100%" cellpadding="7" cellspacing="0" border="0">
+            <h3>
+                <tr>
+                    <td colspan="3"><center><strong><i>Login Page</i></strong></center><br /></td><br />
+                </tr>
+                <tr>
+                <td width="30%">EmailId</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="email" name="mail" size="50" ng-model="udetail.email" /></td>
+                </tr>
+                <tr>
+                <td width="30%">Password</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="password" name="pwd" ng-model="udetail.password" /></td>
+                </tr>
+                 <tr>
+                <td width="30%">User Name</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="text" name="uname" size="50" ng-model="udetail.name" /></td>
+                </tr>
+                 <tr>
+                <td width="30%">Phone</td>
+                <td width="10%">:</td>
+                <td width="80%"><input type="text" name="phone" size="50" ng-model="udetail.phone" /></td>
+                </tr>
+                 <tr>
+                <td width="30%">Address</td>
+                <td width="10%">:</td>
+                <td width="80%"><textarea  name="addr" size="50" ng-model="udetail.address" ></textarea></td>
+                </tr>
+                 <tr>
+                <td colspan="3"><center><input type="submit" value="Register" ng-click="registerUser()"/></center><br /></td>
+                </tr>
+                </h3>
+            </table>
+     
+</form>
+</td>
+
+</tr>
+</table>

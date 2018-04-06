@@ -28,6 +28,10 @@ scotchApp.config(function($routeProvider) {
 			controller  : 'aboutController'
 		})
 		
+		.when('/register', {
+			templateUrl : 'template/registration.html',
+			controller  : 'registercontroller'
+		})
 		
 		.when('/blog', {
 			templateUrl : 'template/blog.html',

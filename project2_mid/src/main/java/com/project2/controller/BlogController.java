@@ -28,6 +28,7 @@ public class BlogController {
 		blog.setCreatedDate(new java.util.Date());
 		blog.setUsername("Nithya");
 		blog.setStatus("A");
+		blog.setLikes(0);
 		System.out.println("Rest Controller Blog Invoked!!!");
 		if(blogDao.insertBlog(blog))
 			
@@ -69,7 +70,7 @@ public class BlogController {
 			return new ResponseEntity<Blog>(blog,HttpStatus.OK);
 	}
 	
-	@PutMapping(value="/updateBlog/{id}")
+	@PostMapping(value="/updateBlog/{id}")
 	public ResponseEntity<String> updateBlog(@PathVariable("id") int blogId,@RequestBody Blog blog)
 	{
 		Blog mblog=blogDao.getBlog(blogId);
@@ -89,4 +90,17 @@ public class BlogController {
 			
 		}
 	}
+	
+	@PutMapping(value = "/incrblog/{blogid}")
+	public ResponseEntity<String> incrblog(@PathVariable("blogid") int blogid) {
+		System.out.println("Increment likes blog with Blog ID: " + blogid);
+		Blog blog = blogDao.getBlog(blogid);
+		if (blog == null) {
+			System.out.println("Not blog with blog Id: " + blogid + " found for incrementing");
+			return new ResponseEntity<String>("No Blog found for incrementing", HttpStatus.NOT_FOUND);
+		} else {
+			blogDao.incrementLike(blog);
+			return new ResponseEntity<String>("Blog " + blogid + " incremented likes Successfully", HttpStatus.OK);
+		}
+	}	
 }
